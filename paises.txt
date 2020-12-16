@@ -1,12 +1,5 @@
-nombre
-capital
-52
-nose
-moneda
-mauricios
-verga
-super
-64
-alv
-jodfer
-sum
+nombre	capital	52	nose	moneda	mauricios
+jos	jos	45	joss	josss	noss
+nombre2	capital	38	nose	moneda	mauricios
+jos2	jos	31	joss	josss	noss
+nombre3	capital	24	nose	moneda	mauricios

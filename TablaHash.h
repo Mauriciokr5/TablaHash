@@ -33,16 +33,17 @@ Elem BuscarTablaH(char * nombre, TablaH th){
     }
     aux=resto(aux);
   }
-  //printf("No se encontro\n");
   return NULL;
 }
 
 TablaH EliminarTablaH(char * nombre, TablaH th){
   int pos = Hash(nombre);
+  int flag = 0;
   Lista aux = th[pos];
   Lista help = vacia();
   while(!esvacia(aux)){
     if (!strcmp(cabeza(aux)->nombre,nombre)) {
+      flag = 1;
       th[pos]=PegaListas(help, resto(aux));
       break;
     }else{
@@ -50,6 +51,10 @@ TablaH EliminarTablaH(char * nombre, TablaH th){
     }
     aux=resto(aux);
   }
+  if (flag)
+    printf("||Eliminado exitosamente||\n");
+  else
+    printf("||No se ha encontrado||\n");
 
   return th;
 }
