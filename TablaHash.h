@@ -19,6 +19,7 @@ int Hash(char *llave){
 
 TablaH InsertaTablaH(Elem e, TablaH th){
   int pos = Hash(e->nombre);
+  //printf("%d---%s\n",Hash(e->nombre), e->nombre);
   th[pos]=cons(e,th[pos]);
   return th;
 }
@@ -57,4 +58,23 @@ TablaH EliminarTablaH(char * nombre, TablaH th){
     printf("||No se ha encontrado||\n");
 
   return th;
+}
+
+TablaH LeeElemF(char *nameFile, TablaH th){
+  FILE *ent;
+  if ((ent = fopen(nameFile,"r")) == NULL) {
+     printf("||No existe el archivo||\n");
+     return th;
+ }
+  Elem e = (Elem)malloc(sizeof(struct pais));
+  char nose[50];
+  while (fscanf(ent,"%s%s%d%s%s%s",e->nombre,e->capital,&e->habitantes,e->idioma,e->moneda,e->gentilicio)!=EOF) {
+    th=InsertaTablaH(e, th);
+    e = (Elem)malloc(sizeof(struct pais));
+  }
+
+  fclose(ent);
+  printf("||Insertado exitosamente||\n");
+  return th;
+
 }

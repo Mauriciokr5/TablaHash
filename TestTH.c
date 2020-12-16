@@ -30,7 +30,8 @@ int menu(){
   printf("1.-Agregar nuevo pais\n");
   printf("2.-Buscar pais\n");
   printf("3.-Eliminar pais\n");
-  //printf("4.-Agregar paises archivo\n");
+  printf("4.-Agregar paises archivo\n");
+  //printf("5.-Buscar por posicion tabla\n");
   printf("0.-Salir\n");
   printf("------------------------\n" );
   scanf("%d", &opcion);
@@ -39,6 +40,7 @@ int menu(){
 }
 
 TablaH fd(TablaH th, int opcion){
+  //int pos;
   char id[50];
   Elem e;
   switch (opcion) {
@@ -68,7 +70,15 @@ TablaH fd(TablaH th, int opcion){
     case 4:
       printf("Ingrese nombre del documento:\n");
       scanf("%s", id);
+      th=LeeElemF(id, th);
     break;
+
+    /*case 5:
+      printf("Ingrese posicion:\n");
+      scanf("%d", &pos);
+      ImpElems(th[pos]);
+    break;*/
+
   }
   return th;
 }

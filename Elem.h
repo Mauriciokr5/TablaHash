@@ -30,7 +30,7 @@ void ImpElem(Elem x){
   /*printf("%s\t%s\t%s\t%s\t%s\n",x->nombre, x->capital, x->idioma,x->moneda,x->gentilicio);
   printf("%s\n", x->idioma);*/
   printf("--------------------------\n");
-  printf("|Nombre: %s\n", x->nombre);
+  printf("|Nombre: %s|\n", x->nombre);
   printf("|Capital: %s\n", x->capital);
   printf("|Habitantes: %d\n", x->habitantes);
   printf("|Idioma: %s\n", x->idioma);
@@ -38,31 +38,3 @@ void ImpElem(Elem x){
   printf("|Gentilicio: %s\n", x->gentilicio);
   printf("--------------------------\n");
 }
-
-/*void LeeElemF(char *nameFile){
-  //printf("Hola\n");
-  FILE *ent=fopen(nameFile,"r");
-  Elem e = (Elem)malloc(sizeof(Elem));
-  char nose[50];
-  fscanf(ent,"%s",nose);
-  printf("%s\n", nose);
-  fscanf(ent,"%s%s%d%s%s%s",e->nombre,e->capital,&e->habitantes,e->idioma,e->moneda,e->gentilicio);
-  ImpElem(e);
-  /*for (int i = 0; i < 5; i++) {
-    fscanf(ent,"%s%s%d%s%s%s",e->nombre,e->capital,&e->habitantes,e->idioma,e->moneda,e->gentilicio);
-    ImpElem(e);
-    printf("------\n" );
-  }
-  /*while (fscanf(ent,"%s%s%d%s%s%s%s",e->nombre,e->capital,&e->habitantes,e->idioma,e->moneda,e->gentilicio)!=EOF) {
-    //printf("%s\n", e->idioma);
-    ImpElem(e);
-    printf("------\n" );
-    //printf("%s\n", nose);
-    //fflush(ent);
-  }
-  fclose(ent);
-    //fscanf(ent,"%s%s%d%f",e->sim,e->nombre,e->na,e->ma);
-
-
-}*/
-//void ImpElem(Elem x){ printf("%d\n", x);}
